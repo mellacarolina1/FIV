@@ -1,0 +1,279 @@
+/* --- Sistema de Diseño: Variables Centrales (Diseño Audaz) --- */
+:root {
+    /* Paleta de Colores Dinámica */
+    --primary-color: #4A6A8A; /* Azul sereno (base) */
+    --primary-gradient: linear-gradient(45deg, #4A6A8A, #5E82A8);
+    --secondary-color: #E8A09A; /* Rosa coral suave */
+    --accent-color: #20c997; /* Verde menta vibrante */
+    --text-color: #343a40; /* Gris oscuro más intenso */
+    --text-light: #6c757d;
+    --background-color: #f8f9fa; /* Fondo gris claro */
+    --card-background: #ffffff;
+    --border-color: #dee2e6;
+    --background-subtle-blue: #f0f4f8; /* Azul muy claro para fondos de notas */
+    --background-subtle-green: #f0fff0; /* Verde muy claro para notas de bienestar */
+    --background-cta-hover: #f0f8ff; /* Azul cielo para hover de botones */
+
+    --font-family: 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    --spacing-s: 8px;
+    --spacing-m: 16px;
+    --spacing-l: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 48px;
+
+    --border-radius: 15px;
+    --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.06);
+    --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+    /* Escala de Tipografía Armonizada */
+    /* Escala de Tipografía Definitiva */
+    --font-size-base: 1rem;      /* Texto principal (p, li) */
+    --font-size-md: 1.2rem;      /* Subtítulos (h3, h4, acordeón) */
+    --font-size-lg: 1.6rem;      /* Títulos de sección (h2) */
+    --font-size-xl: 2.2rem;      /* Título de página (h1) */
+}
+
+/* --- Estilos Globales y Reset --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+
+strong { color: var(--text-color); }
+
+/* --- Contenedor Principal --- */
+.container {
+    max-width: 800px;
+    margin: var(--spacing-xl) auto;
+    background: none;
+    padding: 0;
+    box-shadow: none;
+}
+
+/* --- Estructura de Tarjetas --- */
+.card {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-l);
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.card:hover { transform: translateY(-5px); box-shadow: var(--shadow-medium); }
+
+/* Estilos para la tarjeta de recordatorio (Vigencia de Exámenes) */
+.reminder {
+    background-color: var(--background-subtle-blue);
+    border-left: 5px solid var(--accent-color);
+}
+
+
+
+.reminder ul {
+    padding-left: 20px; /* Menos indentación */
+    margin-bottom: 0.5rem;
+}
+
+.reminder li {
+    font-size: var(--font-size-base); /* Tamaño de fuente unificado */
+    margin-bottom: 0.25rem;
+}
+
+
+
+/* --- Encabezado --- */
+header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-l);
+    padding-bottom: var(--spacing-m);
+}
+
+.logo { max-width: 140px; flex-shrink: 0; }
+header h1 { color: var(--primary-color); font-size: var(--font-size-xl); margin: 0; font-weight: 900; }
+p, li, small {
+    font-size: var(--font-size-base);
+    color: var(--text-color); /* Color de texto principal para máxima legibilidad */
+}
+
+.intro-text, .stage-header .duration, footer p {
+    font-size: var(--font-size-base);
+    color: var(--text-light); /* Color más suave para texto secundario */
+}
+
+/* --- Sección de Bienvenida y Cajas de Info --- */
+h2 { font-size: var(--font-size-lg); color: var(--primary-color); margin-bottom: var(--spacing-m); }
+h3, h4 { font-size: var(--font-size-md); color: var(--primary-color); margin-bottom: var(--spacing-m); }
+
+.welcome-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+}
+
+.welcome-content p {
+    flex-grow: 1;
+    margin: 0; /* Reset margin */
+}
+
+/* --- Botón de Llamado a la Acción (CTA) Sutil --- */
+.cta-container {
+    text-align: center;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-s);
+    background: var(--background-cta-hover);
+    color: var(--primary-color);
+    padding: var(--spacing-s) var(--spacing-m);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: bold;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cta-button svg {
+    fill: var(--primary-color);
+    width: 20px; /* Tamaño de icono más sutil */
+    height: 20px;
+}
+
+.cta-button:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.cta-button:hover svg {
+    fill: white;
+}
+
+.wellbeing-note {
+    background-color: var(--background-subtle-green);
+    border-left: 5px solid var(--accent-color);
+}
+
+.wellbeing-note p { margin: 0; }
+
+/* --- Espaciado Armonioso y Definitivo entre Secciones --- */
+main > .card,
+main > .info-boxes-container {
+    margin-bottom: var(--spacing-xl); /* Espacio reducido y uniforme */
+}
+
+main > .card:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Contenedor de Cajas de Información (2 columnas) --- */
+.info-boxes-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+}
+
+/* --- Acordeón Interactivo 'Para Empezar' --- */
+.accordion-item { border-bottom: 1px solid var(--border-color); }
+.accordion-item:last-child { border-bottom: none; }
+
+.accordion-header {
+    background: none; border: none; width: 100%; display: flex; align-items: center;
+    gap: var(--spacing-m); padding: var(--spacing-m) var(--spacing-s);
+    text-align: left; font-size: var(--font-size-md); font-family: var(--font-family);
+    color: var(--text-color); cursor: pointer; transition: background-color 0.2s;
+    font-weight: bold;
+}
+
+.accordion-header:hover { background-color: #f8f9fa; }
+
+.accordion-icon {
+    background: var(--primary-gradient);
+    color: white; font-size: 1.25rem; border-radius: 50%;
+    width: 45px; height: 45px; display: flex; align-items: center;
+    justify-content: center; flex-shrink: 0; transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(74, 106, 138, 0.4);
+}
+
+.accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-in-out; }
+.accordion-content p { padding: var(--spacing-m) 0 var(--spacing-m) calc(45px + var(--spacing-m)); margin: 0; }
+
+.accordion-item.open .accordion-header { color: var(--primary-color); }
+.accordion-item.open .accordion-icon { transform: scale(1.1); box-shadow: 0 4px 12px rgba(74, 106, 138, 0.5); }
+
+/* --- Línea de Tiempo Principal --- */
+.stage-header {
+    background: var(--primary-gradient);
+    color: white; padding: var(--spacing-m) var(--spacing-l);
+    display: flex; justify-content: space-between; align-items: center;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.stage-header h2, .stage-header .duration {
+    color: #ffffff; /* Blanco puro para máximo contraste */
+    opacity: 1;
+}
+
+.stage-header h2 { margin: 0; }
+
+
+.timeline-content { padding: var(--spacing-l); }
+.timeline-content h3 {
+    font-size: var(--font-size-md); color: var(--primary-color); margin-bottom: var(--spacing-m);
+    display: flex; align-items: center; gap: var(--spacing-m);
+}
+
+.step-icon { font-size: 1.5em; color: var(--secondary-color); }
+.timeline-content p, .step-details { margin-left: calc(1.5em + var(--spacing-m)); padding-bottom: var(--spacing-m); }
+.step-details p { margin: 0; padding: 0; }
+.step-details p + p { margin-top: var(--spacing-s); }
+
+.sub-stage { background-color: #f8f9fa; padding: var(--spacing-m); margin: var(--spacing-l) calc(-1 * var(--spacing-l)); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+.sub-stage h4 { font-size: var(--font-size-md); color: var(--primary-color); text-align: center; font-weight: 600; }
+
+/* --- Pie de Página --- */
+footer {
+    text-align: center; padding: var(--spacing-xxl) 0 var(--spacing-l) 0;
+}
+
+.logo-small { max-width: 80px; margin-bottom: var(--spacing-m); opacity: 0.6; }
+footer p { color: var(--text-light); font-style: italic; font-size: var(--font-size-base); }
+
+/* --- Diseño Adaptable --- */
+@media (max-width: 768px) {
+
+    .container {
+        margin: 0;
+        padding: var(--spacing-m);
+    }
+
+    .card {
+        margin-bottom: var(--spacing-l);
+        padding: var(--spacing-m);
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .welcome-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-boxes-container {
+        grid-template-columns: 1fr; /* Apila las columnas en móvil */
+    }
+
+    /* Ajustes de tipografía para mejor legibilidad en móvil */
+    header h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.4rem; }
+}
