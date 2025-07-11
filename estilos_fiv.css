@@ -166,7 +166,7 @@ h3, h4 { font-size: var(--font-size-md); color: var(--primary-color); margin-bot
 /* --- Espaciado Armonioso y Definitivo entre Secciones --- */
 .container > .card,
 main > .info-boxes-container {
-    margin-bottom: var(--spacing-xl); /* Espacio reducido y uniforme */
+    margin-bottom: var(--spacing-l); /* Espacio reducido y uniforme */
 }
 
 main > .card:last-child {
