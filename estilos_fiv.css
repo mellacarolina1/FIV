@@ -164,7 +164,7 @@ h3, h4 { font-size: var(--font-size-md); color: var(--primary-color); margin-bot
 .wellbeing-note p { margin: 0; }
 
 /* --- Espaciado Armonioso y Definitivo entre Secciones --- */
-main > .card,
+.container > .card,
 main > .info-boxes-container {
     margin-bottom: var(--spacing-xl); /* Espacio reducido y uniforme */
 }
